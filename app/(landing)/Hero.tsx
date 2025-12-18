@@ -1,19 +1,62 @@
+"use client";
 import Button from "./components/Button"
 import ArrowIcon from "@/public/icons/arrow-right.svg";
 import FlexBetween from "./components/FlexBetween";
 import Image from "next/image";
+import React from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
+
+
+gsap.registerPlugin(SplitText);
 
 const Hero = () => {
+    const container = React.useRef<HTMLDivElement>(null);
+    useGSAP(() => {
+        gsap.to(".floating-overlay", {
+            y: -100,
+            duration: 2.5,
+            ease: "power1.inOut",
+            repeat: -1,
+            yoyo: true,
+        });
+
+        const split = new SplitText(".hero-title", {
+            type: "words",
+        });
+
+        gsap.from(split.words, {
+            y: 40,
+            opacity: 0,
+            stagger: 0.05,
+            duration: 1,
+            // ease: "power3.out",
+        });
+        gsap.fromTo(".right-element", {
+            scale: 0,
+            opacity: 0,
+            duration:2
+        }, {
+            scale: 1,
+            opacity: 1,
+            duration:2
+        })
+
+        return () => {
+            split.revert(); // VERY IMPORTANT cleanup
+        };
+    }, { scope: container });
     return (
-        <section className=" min-h-screen relative px-6 md:px-20 flex items-center justify-center">
+        <section ref={container} className=" min-h-screen relative px-6 md:px-20 flex items-center justify-center">
 
             {/* LEFT SECTION  */}
             {/* hero container */}
             <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-12">
                 <div className="md:w-8/12 w-full flex flex-col items-start gap-8 mt-10 md:mt-0">
-                    <span className="uppercase font-semibold text-sm leading-5 tracking-[1.4px] text-(--color-primary)">Satellite Forest Monitoring</span>
-                    <p className="text-[clamp(28px,4vw,48px)] font-bold leading-12 -tracking-[1.2px] text-(-color-secondary)">Monitor Tree Planting Projects <span className="text-(--color-primary)">From Space</span></p>
-                    <p className="text-[clamp(16px,4vw,24px)] font-normal leading-7 text-(--color-secondary) opacity-90">Automated satellite monitoring for transparent, verifiable tree
+                    <span className="hero-title uppercase font-semibold text-sm leading-5 tracking-[1.4px] text-(--color-primary)">Satellite Forest Monitoring</span>
+                    <p className="hero-title text-[clamp(28px,4vw,48px)] font-bold leading-12 -tracking-[1.2px] text-(-color-secondary)">Monitor Tree Planting Projects <span className="text-(--color-primary)">From Space</span></p>
+                    <p className="hero-title text-[clamp(16px,4vw,24px)] font-normal leading-7 text-(--color-secondary) opacity-90">Automated satellite monitoring for transparent, verifiable tree
                         planting impact. Real-time data, instant reports, and
                         stakeholder confidence.</p>
                     <Button
@@ -50,7 +93,7 @@ const Hero = () => {
 
                 </div>
                 {/* RIGHT SECTION  */}
-                <div className="w-full md:w-5/12 flex items-center justify-center md:justify-end">
+                <div className="right-element w-full md:w-5/12 flex items-center justify-center md:justify-end">
                     <div className="relative flex flex-col gap-3 bg-white rounded-lg border border-[#EDF1F3] p-4.5 w-full " style={{ boxShadow: "0px 24px 64px 0px #2B3D4F33" }}>
                         <FlexBetween className="justify-between">
                             <p className="font-semibold text-sm leading-5 text-(--color-secondary)">Project: Amazon Reforestation</p>
@@ -85,7 +128,7 @@ const Hero = () => {
                                 <p className="text-(--color-primary) font-medium text-xs leading-4">+8%</p>
                             </div>
                         </FlexBetween>
-                        <div className="absolute -bottom-7 -left-4 md:-left-6 flex items-center gap-3 p-3 rounded-lg bg-[#FFFFFF] border border-[#EDF1F3] shadow-[0px 4px 16px 0px #2B3D4F14]"
+                        <div className="floating-overlay absolute -bottom-7 -left-4 md:-left-6 flex items-center gap-3 p-3 rounded-lg bg-[#FFFFFF] border border-[#EDF1F3] shadow-[0px 4px 16px 0px #2B3D4F14]"
                             style={{
                                 boxShadow: "0px 4px 16px 0px #2B3D4F14"
                             }}
