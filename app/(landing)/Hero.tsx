@@ -4,15 +4,23 @@ import ArrowIcon from "@/public/icons/arrow-right.svg";
 import FlexBetween from "./components/FlexBetween";
 import Image from "next/image";
 import React from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
+import { gsap, useGSAP, } from "../lib/gsap";
+import { useScrambleText } from "../hooks/useScrambleText";
+import { useSplitText } from "../hooks/useSplitText";
 
-
-gsap.registerPlugin(SplitText);
 
 const Hero = () => {
     const container = React.useRef<HTMLDivElement>(null);
+    useScrambleText({
+        selector: ".stat-value",
+        scope: container,
+    })
+    useSplitText({
+        selector: ".hero-title",
+        scope: container,
+        y: 40,
+        type: "words"
+    })
     useGSAP(() => {
         gsap.to(".floating-overlay", {
             y: -100,
@@ -22,34 +30,18 @@ const Hero = () => {
             yoyo: true,
         });
 
-        const split = new SplitText(".hero-title", {
-            type: "words",
-        });
-
-        gsap.from(split.words, {
-            y: 40,
-            opacity: 0,
-            stagger: 0.05,
-            duration: 1,
-            // ease: "power3.out",
-        });
         gsap.fromTo(".right-element", {
             scale: 0,
             opacity: 0,
-            duration:2
+            duration: 2
         }, {
             scale: 1,
             opacity: 1,
-            duration:2
+            duration: 2
         })
-
-        return () => {
-            split.revert(); // VERY IMPORTANT cleanup
-        };
     }, { scope: container });
     return (
         <section ref={container} className=" min-h-screen relative px-6 md:px-20 flex items-center justify-center">
-
             {/* LEFT SECTION  */}
             {/* hero container */}
             <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-12">
@@ -113,19 +105,19 @@ const Hero = () => {
                         </div>
                         <FlexBetween className="justify-between gap-3">
                             <div className="rounded-lg bg-[#F6F8F9] p-3 text-center w-full">
-                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1">2,450</p>
+                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">2,450</p>
                                 <p className="text-[#657586] font-normal text-xs leading-4 mb-1">Trees planted</p>
-                                <p className="text-(--color-primary) font-medium text-xs leading-4">+12%</p>
+                                <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">+12%</p>
                             </div>
                             <div className="rounded-lg bg-[#F6F8F9] p-3 text-center w-full">
-                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1">94%</p>
+                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">94%</p>
                                 <p className="text-[#657586] font-normal text-xs leading-4 mb-1">Survival rate</p>
-                                <p className="text-(--color-primary) font-medium text-xs leading-4">+3%</p>
+                                <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">+3%</p>
                             </div>
                             <div className="rounded-lg bg-[#F6F8F9] p-3 text-center w-full">
-                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1">12.3t</p>
+                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">12.3t</p>
                                 <p className="text-[#657586] font-normal text-xs leading-4 mb-1">CO₂ captured</p>
-                                <p className="text-(--color-primary) font-medium text-xs leading-4">+8%</p>
+                                <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">+8%</p>
                             </div>
                         </FlexBetween>
                         <div className="floating-overlay absolute -bottom-7 -left-4 md:-left-6 flex items-center gap-3 p-3 rounded-lg bg-[#FFFFFF] border border-[#EDF1F3] shadow-[0px 4px 16px 0px #2B3D4F14]"

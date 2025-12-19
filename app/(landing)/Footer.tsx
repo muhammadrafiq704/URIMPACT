@@ -1,11 +1,31 @@
 import Image from "next/image";
 import Container from "./components/Container";
+import { gsap, useGSAP, SplitText } from "../../app/lib/gsap";
+import React from "react";
 
 const Footer = () => {
+    const container = React.useRef<HTMLElement>(null);
+    useGSAP(() => {
+        const split = SplitText.create(".split", { type: "lines" });
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container.current,
+                start: "top 75%",
+                onEnter:()=> tl.restart()   
+            },
+        });
+        tl.from(split.lines, {
+            y:40,
+            duration: 1,
+            stagger: 0.08,
+            autoAlpha: 0,
+            ease: "power2.out",
+        });
+    }, { scope: container });
     return (
-        <footer className="bg-[#2B3D4F] text-white">
+        <footer ref={container} className="bg-[#2B3D4F] text-white">
             <Container>
-                <div className="grid grid-cols-1 md:grid-cols-6 gap-12">
+                <div className=" grid grid-cols-1 md:grid-cols-6 gap-12">
 
                     {/* LOGO AND NEWSLETTER */}
                     <div className="col-span-1 md:col-span-2 flex flex-col gap-6 items-start">
@@ -15,11 +35,11 @@ const Footer = () => {
                             width={200}
                             height={50}
                         />
-                        <p className="text-sm leading-5 text-white/70">
+                        <p className="split text-sm leading-5 text-white/70">
                             Monitor your tree planting projects from space with automated satellite monitoring and AI-driven insights.
                         </p>
                         <div className="flex flex-col gap-2 text-sm w-full">
-                            <span className="font-medium text-sm leading-5">Subscribe to our newsletter</span>
+                            <span className="split font-medium text-sm leading-5">Subscribe to our newsletter</span>
                             <div className="flex flex-col md:flex-row items-center gap-2 w-full">
                                 <input
                                     type="email"
@@ -43,7 +63,7 @@ const Footer = () => {
                     </div>
 
                     {/* PRODUCT */}
-                    <div className="flex flex-col gap-4">
+                    <div className="split flex flex-col gap-4">
                         <span className="font-semibold text-sm leading-5">Product</span>
                         <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Features</a>
                         <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Pricing</a>
@@ -52,7 +72,7 @@ const Footer = () => {
                     </div>
 
                     {/* COMPANY */}
-                    <div className="flex flex-col gap-4">
+                    <div className="split flex flex-col gap-4">
                         <span className="font-semibold text-sm leading-5">Company</span>
                         <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">About</a>
                         <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Blog</a>
@@ -61,7 +81,7 @@ const Footer = () => {
                     </div>
 
                     {/* CONTACT */}
-                    <div className="flex flex-col gap-4">
+                    <div className="split flex flex-col gap-4">
                         <span className="font-semibold text-sm leading-5">Resources</span>
                         <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Documentation</a>
                         <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Help Center</a>
@@ -69,7 +89,7 @@ const Footer = () => {
                         <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Webinars</a>
                     </div>
                     {/* LEGAL */}
-                    <div className="flex flex-col gap-4">
+                    <div className="split flex flex-col gap-4">
                         <span className="font-semibold text-sm leading-5">Legal</span>
                         <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Privacy Policy</a>
                         <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Terms of Service</a>
@@ -80,7 +100,7 @@ const Footer = () => {
 
                 <hr className="border-t border-white/20 my-8" />
 
-                <p className="text-center text-sm leading-5 text-white/50">
+                <p className="split text-center text-sm leading-5 text-white/50">
                     © 2025 ForestWatch. All rights reserved.
                 </p>
             </Container>

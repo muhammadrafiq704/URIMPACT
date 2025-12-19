@@ -4,57 +4,22 @@ import Container from "./components/Container"
 import FlexBetween from "./components/FlexBetween"
 import { images, stats } from "./utils"
 import React from "react"
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScrambleText } from "../hooks/useScrambleText";
+import { useSplitText } from "../hooks/useSplitText";
 
-gsap.registerPlugin(SplitText);
 const Trusted = () => {
     const container = React.useRef<HTMLDivElement>(null);
-    useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        // 🔹 Split heading text
-        const split = SplitText.create(".split", { type: "lines" });
-
-        // 🔹 Scroll-based timeline
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: container.current,
-                start: "top 75%",
-                toggleActions: "play none none none",
-            },
-        });
-
-        // 1️⃣ Heading animation
-        tl.from(split.lines, {
-            y: 40,
-            autoAlpha: 0,
-            stagger: 0.06,
-            duration: 1,
-            ease: "back.out(1.7)",
-        });
-
-        // 2️⃣ Stats animation (starts only after trigger)
-        tl.to(
-            ".value-text",
-            {
-                yPercent: -50,
-                duration: 2.5,
-                ease: "none",
-                yoyo: true,
-                repeat: -1,
-            },
-            "-=0.3"
-        );
-
-        // 🔹 Cleanup
-        return () => {
-            split.revert();
-            ScrollTrigger.getAll().forEach(st => st.kill());
-        };
-    }, { scope: container });
+    useScrambleText({
+        selector: ".stat-value",
+        scope: container,
+        chars: "0123456+",
+    });
+    useSplitText({
+        selector: ".split",
+        scope: container,
+        y: 20,
+        type: "words",
+    })
 
     return (
         <Container>
@@ -72,7 +37,7 @@ const Trusted = () => {
                 <FlexBetween className="items-center justify-center gap-15">
                     {stats.map((item) => (
                         <div key={item.label} className="flex flex-col gap-4">
-                            <p className="value-text font-bold text-[clamp(18px,4vw,36px)] leading-10 text-[#2B3D4F]">
+                            <p className="stat-value font-bold text-[clamp(18px,4vw,36px)] leading-10 text-[#2B3D4F]">
                                 {item.value}
                             </p>
                             <p className="font-normal text-sm leading-5 text-[#2B3D4F]">

@@ -43,3 +43,7 @@ body {
 .marque-animation {
   animation: marquee 20s linear infinite;
 }
+.split-line {
+  display: block;
+  line-height: inherit;
+}
