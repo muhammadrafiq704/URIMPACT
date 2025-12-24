@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { gsap, useGSAP } from "../../lib/gsap";
+import { gsap, useGSAP } from "@/app/lib/gsap";
 type ButtonProps = {
     variant?: "contained" | "outlined";
     onClick?: () => void;

@@ -4,7 +4,7 @@ import Container from "./components/Container"
 import FlexBetween from "./components/FlexBetween"
 import { services } from "./utils"
 import { useRef } from "react"
-import { useSplitText } from "../hooks/useSplitText"
+import { useSplitText } from "@/app/hooks/useSplitText"
 
 const Services = () => {
   const container = useRef<HTMLDivElement>(null);

@@ -7,7 +7,7 @@ import ESGIndexContent from "./ESGIndexContent"
 import CarbonIndexContent from "./CarbonIndexContent"
 import AgricultureIndexContent from "./AgricultureIndexContent"
 import { useRef } from "react"
-import { gsap, SplitText, useGSAP } from "../lib/gsap"
+import { gsap, SplitText, useGSAP } from "@/app/lib/gsap"
 
 const rightContent = [
     <CSRIndexContent key="csr" />,

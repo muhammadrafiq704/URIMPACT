@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { useRef } from "react";
-import { useScrambleText } from "../hooks/useScrambleText";
+import { useScrambleText } from "@/app/hooks/useScrambleText";
 
 const ESGIndexContent = () => {
     const container = useRef<HTMLDivElement>(null);

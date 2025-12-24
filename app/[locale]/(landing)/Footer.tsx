@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Container from "./components/Container";
-import { gsap, useGSAP, SplitText } from "../../app/lib/gsap";
 import React from "react";
+import {useGSAP, gsap, SplitText} from "@/app/lib/gsap";
 
 const Footer = () => {
     const container = React.useRef<HTMLElement>(null);

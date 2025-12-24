@@ -2,8 +2,8 @@ import Image from "next/image"
 import Container from "./components/Container"
 import FlexBetween from "./components/FlexBetween"
 import { useRef } from "react";
-import { gsap, useGSAP } from "../lib/gsap"
-import { useSplitText } from "../hooks/useSplitText";
+import { gsap, useGSAP } from "@/app/lib/gsap"
+import { useSplitText } from "@/app/hooks/useSplitText";
 
 const SeeForest = () => {
     const container = useRef<HTMLDivElement>(null);

@@ -4,8 +4,8 @@ import Container from "./components/Container"
 import FlexBetween from "./components/FlexBetween"
 import { images, stats } from "./utils"
 import React from "react"
-import { useScrambleText } from "../hooks/useScrambleText";
-import { useSplitText } from "../hooks/useSplitText";
+import { useScrambleText } from "@/app/hooks/useScrambleText";
+import { useSplitText } from "@/app/hooks/useSplitText";
 
 const Trusted = () => {
     const container = React.useRef<HTMLDivElement>(null);
