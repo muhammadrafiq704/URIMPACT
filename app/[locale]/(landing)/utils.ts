@@ -133,7 +133,7 @@ export const servicesDetails: ServicesDetailsProps[] = [
       "Shareable impact reports",
       "Biodiversity assessment",
     ],
-     bg: "#2D5F3F",
+    bg: "#2D5F3F",
   },
   {
     id: 2,
@@ -150,7 +150,7 @@ export const servicesDetails: ServicesDetailsProps[] = [
       "Regulatory compliance",
       "Stakeholder dashboards",
     ],
-   bg: "#00B8A9",
+    bg: "#00B8A9",
   },
   {
     id: 3,
@@ -184,6 +184,6 @@ export const servicesDetails: ServicesDetailsProps[] = [
       "Pest detection",
       "Historical performance",
     ],
-     bg: "#E8D5B7",
+    bg: "#E8D5B7",
   },
 ];
