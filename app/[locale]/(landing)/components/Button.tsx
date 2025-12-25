@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { gsap, useGSAP } from "@/app/lib/gsap";
+import { useParams } from "next/navigation";
 type ButtonProps = {
     variant?: "contained" | "outlined";
     onClick?: () => void;
@@ -13,6 +14,8 @@ type ButtonProps = {
 const Button = ({ variant = "contained", onClick, text, icon }: ButtonProps) => {
     const btnRef = useRef<HTMLButtonElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
+const params = useParams();
+const {locale} = params;
 
     useGSAP(() => {
         if (!btnRef.current) return;
@@ -65,7 +68,7 @@ const Button = ({ variant = "contained", onClick, text, icon }: ButtonProps) => 
         >
             <span >{text}</span>
             {variant === "contained" && icon && (
-                <Image ref={imageRef} src={icon} alt="Icon" width={18} height={18} />
+                <Image ref={imageRef} src={icon} alt="Icon" width={18} height={18} className={`${locale ==='ar' ? "rotate-180" : "rotate-0" }`} />
             )}
         </button>
     );

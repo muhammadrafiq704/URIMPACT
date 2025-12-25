@@ -48,13 +48,11 @@ const Hero = () => {
             {/* hero container */}
             <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-12">
                 <div className="md:w-8/12 w-full flex flex-col items-start gap-8 mt-10 md:mt-0">
-                    <span className="hero-title uppercase font-semibold text-sm leading-5 tracking-[1.4px] text-(--color-primary)">{t("chip_label")}</span>
-                    <p className="hero-title text-[clamp(28px,4vw,48px)] font-bold leading-12 -tracking-[1.2px] text-(-color-secondary)">Monitor Tree Planting Projects <span className="text-(--color-primary)">From Space</span></p>
-                    <p className="hero-title text-[clamp(16px,4vw,24px)] font-normal leading-7 text-(--color-secondary) opacity-90">Automated satellite monitoring for transparent, verifiable tree
-                        planting impact. Real-time data, instant reports, and
-                        stakeholder confidence.</p>
+                    <span className="hero-title uppercase font-semibold text-sm leading-5 tracking-[1.4px] text-(--color-primary)">{t("LeftContent.chip_label")}</span>
+                    <p className="hero-title text-[clamp(28px,4vw,48px)] font-bold leading-12 -tracking-[1.2px] text-(-color-secondary)">{t("LeftContent.title")} <span className="text-(--color-primary)">{t("LeftContent.span_title")}</span></p>
+                    <p className="hero-title text-[clamp(16px,4vw,24px)] font-normal leading-7 text-(--color-secondary) opacity-90">{t("LeftContent.sub_title")}</p>
                     <Button
-                        text="Start Monitoring"
+                        text={t("LeftContent.btn_text")}
                         variant="contained"
                         icon={ArrowIcon}
                     />
@@ -64,21 +62,21 @@ const Hero = () => {
                             <FlexBetween className="gap-2 items-center">
                                 <Image src="/icons/satellite.svg" alt="Satellite Icon" width={16} height={16} />
                                 <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
-                                    Daily satellite updates
+                                    {t("LeftContent.marque_label_1")}
                                 </p>
                             </FlexBetween>
 
                             <FlexBetween className="gap-2 items-center">
                                 <Image src="/icons/tree.svg" alt="Tree Icon" width={16} height={16} />
                                 <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
-                                    10M+ trees monitored
+                                    {t("LeftContent.marque_label_2")}
                                 </p>
                             </FlexBetween>
 
                             <FlexBetween className="gap-2 items-center">
                                 <Image src="/icons/audit.svg" alt="Audit Icon" width={16} height={16} />
                                 <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
-                                    Audit-ready reports
+                                     {t("LeftContent.marque_label_3")}
                                 </p>
                             </FlexBetween>
 
@@ -90,8 +88,8 @@ const Hero = () => {
                 <div className="right-element w-full md:w-5/12 flex items-center justify-center md:justify-end">
                     <div className="relative flex flex-col gap-3 bg-white rounded-lg border border-[#EDF1F3] p-4.5 w-full " style={{ boxShadow: "0px 24px 64px 0px #2B3D4F33" }}>
                         <FlexBetween className="justify-between">
-                            <p className="font-semibold text-sm leading-5 text-(--color-secondary)">Project: Amazon Reforestation</p>
-                            <div className="bg-primary/10 px-2 py-1 rounded-full flex items-center justify-center"><span className="text-(--color-primary) text-[12px] font-medium leading-4 opacity-100">Live</span></div>
+                            <p className="font-semibold text-sm leading-5 text-(--color-secondary)">{t("RightContent.card_title")}</p>
+                            <div className="bg-primary/10 px-2 py-1 rounded-full flex items-center justify-center"><span className="text-(--color-primary) text-[12px] font-medium leading-4 opacity-100">{t("RightContent.card_chip_label")}</span></div>
                         </FlexBetween>
                         <div className="rounded-lg bg-[#2F603F33] overflow-hidden">
                             <Image
@@ -107,19 +105,19 @@ const Hero = () => {
                         </div>
                         <FlexBetween className="justify-between gap-3">
                             <div className="rounded-lg bg-[#F6F8F9] p-3 text-center w-full">
-                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">2,450</p>
-                                <p className="text-[#657586] font-normal text-xs leading-4 mb-1">Trees planted</p>
-                                <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">+12%</p>
+                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">{t("RightContent.stats1_title")}</p>
+                                <p className="text-[#657586] font-normal text-xs leading-4 mb-1">{t("RightContent.stats1_sub_title")}</p>
+                                <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">{t("RightContent.stats1_count_per")}</p>
                             </div>
                             <div className="rounded-lg bg-[#F6F8F9] p-3 text-center w-full">
-                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">94%</p>
-                                <p className="text-[#657586] font-normal text-xs leading-4 mb-1">Survival rate</p>
-                                <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">+3%</p>
+                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">{t("RightContent.stats2_title")}</p>
+                                <p className="text-[#657586] font-normal text-xs leading-4 mb-1">{t("RightContent.stats2_sub_title")}</p>
+                                <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">{t("RightContent.stats2_count_per")}</p>
                             </div>
                             <div className="rounded-lg bg-[#F6F8F9] p-3 text-center w-full">
-                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">12.3t</p>
-                                <p className="text-[#657586] font-normal text-xs leading-4 mb-1">CO₂ captured</p>
-                                <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">+8%</p>
+                                <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">{t("RightContent.stats3_title")}</p>
+                                <p className="text-[#657586] font-normal text-xs leading-4 mb-1">{t("RightContent.stats3_sub_title")}</p>
+                                <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">{t("RightContent.stats3_count_per")}</p>
                             </div>
                         </FlexBetween>
                         <div className="floating-overlay absolute -bottom-7 -left-4 md:-left-6 flex items-center gap-3 p-3 rounded-lg bg-[#FFFFFF] border border-[#EDF1F3] shadow-[0px 4px 16px 0px #2B3D4F14]"
@@ -134,8 +132,8 @@ const Hero = () => {
                                 height={32}
                             />
                             <FlexBetween className="flex-col">
-                                <p className="text-[#2B3D4F] font-medium text-xs leading-4">New Detection</p>
-                                <p className="text-[#657586] font-normal text-xs leading-4">+156 trees verified</p>
+                                <p className="text-[#2B3D4F] font-medium text-xs leading-4">{t("RightContent.overlay_title")}</p>
+                                <p className="text-[#657586] font-normal text-xs leading-4">{t("RightContent.overlay_sub_title")}</p>
                             </FlexBetween>
                         </div>
                     </div>
