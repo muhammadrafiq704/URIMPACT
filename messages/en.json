@@ -1,0 +1,12 @@
+{
+  "TabTitle": {
+    "title": "URIMPACT | Landing Page",
+    "description": "Urimpact landing page"
+  },
+  "HeroSection": {
+    "chip_label": "Satellite Forest Monitoring",
+    "title": "Monitor Tree Planting Projects From Space",
+    "sub_title": "Automated satellite monitoring for transparent, verifiable tree planting impact. Real-time data, instant reports, and stakeholder confidence.",
+    "btn_text": "Start Monitoring"
+  }
+}

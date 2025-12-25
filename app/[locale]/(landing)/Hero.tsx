@@ -4,13 +4,15 @@ import ArrowIcon from "@/public/icons/arrow-right.svg";
 import FlexBetween from "./components/FlexBetween";
 import Image from "next/image";
 import React from "react";
-import { gsap, useGSAP, } from "../lib/gsap";
-import { useScrambleText } from "../hooks/useScrambleText";
-import { useSplitText } from "../hooks/useSplitText";
+import { gsap, useGSAP, } from "@/app/lib/gsap";
+import { useScrambleText } from "@/app/hooks/useScrambleText";
+import { useSplitText } from "@/app/hooks/useSplitText";
+import { useTranslations } from "next-intl";
 
 
 const Hero = () => {
     const container = React.useRef<HTMLDivElement>(null);
+    const t = useTranslations("HeroSection")
     useScrambleText({
         selector: ".stat-value",
         scope: container,
@@ -46,7 +48,7 @@ const Hero = () => {
             {/* hero container */}
             <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-12">
                 <div className="md:w-8/12 w-full flex flex-col items-start gap-8 mt-10 md:mt-0">
-                    <span className="hero-title uppercase font-semibold text-sm leading-5 tracking-[1.4px] text-(--color-primary)">Satellite Forest Monitoring</span>
+                    <span className="hero-title uppercase font-semibold text-sm leading-5 tracking-[1.4px] text-(--color-primary)">{t("chip_label")}</span>
                     <p className="hero-title text-[clamp(28px,4vw,48px)] font-bold leading-12 -tracking-[1.2px] text-(-color-secondary)">Monitor Tree Planting Projects <span className="text-(--color-primary)">From Space</span></p>
                     <p className="hero-title text-[clamp(16px,4vw,24px)] font-normal leading-7 text-(--color-secondary) opacity-90">Automated satellite monitoring for transparent, verifiable tree
                         planting impact. Real-time data, instant reports, and

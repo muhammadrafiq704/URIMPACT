@@ -1,8 +1,8 @@
-import Chip from '@/app/(landing)/components/Chip'
-import FlexBetween from '@/app/(landing)/components/FlexBetween'
 import Image from 'next/image'
-import React, { useRef } from 'react'
-import { useScrambleText } from '../hooks/useScrambleText'
+import { useRef } from 'react'
+import FlexBetween from './components/FlexBetween'
+import { useScrambleText } from '@/app/hooks/useScrambleText'
+import Chip from './components/Chip'
 
 const CSRIndexContent = () => {
     const container = useRef<HTMLDivElement>(null);

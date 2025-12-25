@@ -1,6 +1,6 @@
 import Button from "./components/Button"
 import FlexBetween from "./components/FlexBetween"
-import { gsap, useGSAP } from "../lib/gsap"
+import { gsap, useGSAP } from "@/app/lib/gsap"
 import { useRef } from "react"
 
 const CTA = () => {

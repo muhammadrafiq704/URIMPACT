@@ -6,7 +6,7 @@ import FlexBetween from "./components/FlexBetween"
 import { benefits, manualProcessFeatures } from "./utils"
 import Button from "./components/Button"
 import { useRef } from "react"
-import { useSplitText } from "../hooks/useSplitText"
+import { useSplitText } from "@/app/hooks/useSplitText"
 
 const ProblemAndSoution = () => {
     const container = useRef<HTMLDivElement>(null);
