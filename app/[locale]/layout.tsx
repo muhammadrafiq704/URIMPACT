@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Inter, } from "next/font/google";
 import "../globals.css";
-import {NextIntlClientProvider, hasLocale} from 'next-intl';
-import {notFound} from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 import { getMessages, setRequestLocale } from "next-intl/server";
-import LanguageSwitcher from "./(landing)/components/LanguageSwitcher";
+import LocaleSwitcher from "./(landing)/components/localSwticher";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,7 +14,7 @@ const inter = Inter({
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 };
 
 type MetaDataProps = {
@@ -38,8 +38,8 @@ export default async function RootLayout({
   children,
   params
 }: Props) {
-  // Ensure that the incoming `locale` is valid
-  const {locale} = await params;
+  const { locale } = await params;
+  console.log('params.locale', locale)
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -51,10 +51,10 @@ export default async function RootLayout({
       <body
         className={`${inter.variable}`}
       >
-        <>
-        <LanguageSwitcher currentLocale={locale}/>
-       <NextIntlClientProvider locale={locale} messages={messages}>{children}</NextIntlClientProvider>
-        </>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <LocaleSwitcher currentLocale={locale} />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
