@@ -129,5 +129,114 @@
         "description": "Automated reports and dashboards keep all stakeholders informed"
       }
     ]
-  }
+  },
+
+  "ServicesDetailsSection": {
+  "tick_icon_alt": "Check icon",
+  "services": [
+    {
+      "tag": "CSR Tree Planting System",
+      "title": "Satellite-Verified Tree Planting Certificates",
+      "desc": "Perfect for corporate social responsibility initiatives and sustainability commitments.",
+      "sub_desc": "Reports are structured to meet Verra VCS, Gold Standard, and other carbon credit certification requirements.",
+      "features": [
+        "Verification certificates",
+        "Satellite imagery proof",
+        "GPS-verified tree counts",
+        "Shareable impact reports",
+        "Shareable impact reports",
+        "Biodiversity assessment"
+      ]
+    },
+    {
+      "tag": "ESG Carbon Management",
+      "title": "Complete Carbon Management Platform",
+      "desc": "Combine Scope 1 & 2 emissions tracking with satellite-verified tree planting offsets.",
+      "sub_desc": "Automate ESG reporting for regulatory compliance and stakeholder transparency.",
+      "features": [
+        "Emissions tracking",
+        "AI-powered insights",
+        "Carbon offset integration",
+        "ESG reporting automation",
+        "Regulatory compliance",
+        "Stakeholder dashboards"
+      ]
+    },
+    {
+      "tag": "CARBON CREDIT MRV",
+      "title": "Quarterly/Annual Monitoring, Reporting & Verification",
+      "desc": "Comprehensive monitoring for carbon credit projects.",
+      "sub_desc": "Reports are automatically structured to meet international standards including Verra VCS, Gold Standard, and Plan Vivo.",
+      "features": [
+        "Quarterly/annual reports",
+        "Carbon sequestration metrics",
+        "Compliance documentation",
+        "Baseline assessments",
+        "Additionality verification",
+        "Third-party audit support"
+      ]
+    },
+    {
+      "tag": "AGRICULTURAL MONITORING",
+      "title": "Precision Agriculture From Space",
+      "desc": "",
+      "sub_desc": "Monitor crop health, optimize irrigation, detect pests early, and maximize yields with weekly satellite monitoring and AI powered insights.",
+      "features": [
+        "Crop health heatmaps",
+        "NDVI analysis",
+        "Irrigation alerts",
+        "Yield optimization",
+        "Pest detection",
+        "Historical performance"
+      ]
+    }
+  ]
+},
+  
+  
+  "SeeForestSection": {
+  "title": "See Your Forest From Above",
+  "subtitle": "Monitor all your environmental projects in one unified dashboard with real-time satellite data and automated reporting.",
+  "image_alt": "Forest View Dashboard"
+},
+  "CTASection": {
+  "title": "Ready to Monitor Your Forest Impact?",
+  "subtitle": "Join leading organizations using satellite technology for transparent tree monitoring.",
+  "primary_button": "Request a Demo",
+  "secondary_button": "Contact Sales"
+},
+"Footer": {
+  "logo_alt": "URIMPACT Logo",
+  "description": "Monitor your tree planting projects from space with automated satellite monitoring and AI-driven insights.",
+  "newsletter_title": "Subscribe to our newsletter",
+  "email_placeholder": "Enter your email",
+  "subscribe_button_aria": "Subscribe",
+  "send_icon_alt": "Send",
+  
+  "product_title": "Product",
+  "features": "Features",
+  "pricing": "Pricing",
+  "api": "API",
+  "integration": "Integration",
+  
+  "company_title": "Company",
+  "about": "About",
+  "blog": "Blog",
+  "careers": "Careers",
+  "contact": "Contact",
+  
+  "resources_title": "Resources",
+  "documentation": "Documentation",
+  "help_center": "Help Center",
+  "case_studies": "Case Studies",
+  "webinars": "Webinars",
+  
+  "legal_title": "Legal",
+  "privacy_policy": "Privacy Policy",
+  "terms_of_service": "Terms of Service",
+  "cookie_policy": "Cookie Policy",
+  "security": "Security",
+  
+  "copyright": "© 2025 URIMPACT. All rights reserved."
+}
 }
