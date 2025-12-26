@@ -5,9 +5,9 @@ import React from "react";
 import { useGSAP, gsap, SplitText } from "@/app/lib/gsap";
 
 const socialIcons = [
-    { id: 1, icon: "/icons/linkedin-icon.png", label: 'LinkedIn' },
-    { id: 1, icon: "/icons/facebook-icon.png", label: 'Facebook' },
-    { id: 1, icon: "/icons/x-icon.png", label: 'X' }
+    { id: 1, icon: "/icons/linkedin.svg", label: 'LinkedIn' },
+    { id: 1, icon: "/icons/facebook.svg", label: 'Facebook' },
+    { id: 1, icon: "/icons/twitter.svg", label: 'X' }
 ]
 import { useTranslations } from "next-intl";
 

@@ -4,13 +4,12 @@ import Image from "next/image"
 import Container from "./components/Container"
 import FlexBetween from "./components/FlexBetween"
 import { benefits, manualProcessFeatures } from "./utils"
-import Button from "./components/Button"
 import { useRef } from "react"
 import { useSplitText } from "@/app/hooks/useSplitText"
-import { useTranslations } from "next-intl"           // <--- ADD THIS
+import { useTranslations } from "next-intl"          
 
 const ProblemAndSoution = () => {
-    const t = useTranslations("ProblemSolution")     // <--- translation namespace
+    const t = useTranslations("ProblemSolution")     
     const container = useRef<HTMLDivElement>(null);
 
     useSplitText({
@@ -90,10 +89,6 @@ const ProblemAndSoution = () => {
                         </div>
                     </div>
                 </div>
-
-                <FlexBetween className="justify-center w-full">
-                    <Button variant="outlined" text={t("button_text")} />
-                </FlexBetween>
             </div>
         </Container>
     )
