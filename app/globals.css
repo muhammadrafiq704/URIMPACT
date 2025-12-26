@@ -16,6 +16,17 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* tailwind animation */
+@layer utilities {
+  .animate-scale-up {
+    animation: scaleUp .3s ease forwards;
+  }
+  @keyframes scaleUp {
+    from { transform: scale(.8); opacity:0 }
+    to { transform: scale(1); opacity:1 }
+  }
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #FFFFFF;

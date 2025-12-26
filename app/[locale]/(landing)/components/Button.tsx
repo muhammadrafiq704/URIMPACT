@@ -54,7 +54,7 @@ const {locale} = params;
                     ? "bg-(--color-primary) text-white hover:bg-[#077168]"
                     : "text-(--color-primary) border-2 border-(--color-primary) hover:bg-(--color-primary) hover:text-[#FFFFFF]"
                 } 
-        px-8 py-2.5 text-lg leading-7 flex items-center gap-1 font-semibold cursor-pointer transition-all duration-500 ease-in-out overflow-hidden
+        px-8 py-2.5 text-lg leading-7 flex items-center gap-1 font-semibold cursor-pointer transition-all duration-500 ease-in-out overflow-hidden rounded-xl
       `}
             onClick={onClick}
             style={
@@ -68,7 +68,7 @@ const {locale} = params;
         >
             <span >{text}</span>
             {variant === "contained" && icon && (
-                <Image ref={imageRef} src={icon} alt="Icon" width={18} height={18} className={`${locale ==='ar' ? "rotate-180" : "rotate-0" }`} />
+                <Image ref={imageRef} src={icon} alt="Icon" width={24} height={24} className={`${locale ==='ar' ? "rotate-180" : "rotate-0" }`} />
             )}
         </button>
     );

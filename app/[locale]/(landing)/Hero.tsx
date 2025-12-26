@@ -1,6 +1,6 @@
 "use client";
 import Button from "./components/Button"
-import ArrowIcon from "@/public/icons/arrow-right.svg";
+import ArrowIcon from "@/public/icons/arrow-down-right.svg";
 import FlexBetween from "./components/FlexBetween";
 import Image from "next/image";
 import React from "react";
