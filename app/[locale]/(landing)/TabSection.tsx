@@ -5,6 +5,7 @@ import Container from "./components/Container";
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useTranslations } from "next-intl";
+import { useSplitText } from "@/app/hooks/useSplitText";
 
 const tabs = [
     { id: 1, icon: "/icons/onboarding.svg", label: "Onboarding-icon", image: "/images/onboarding.png" },
@@ -19,7 +20,14 @@ const TabSection = () => {
     const [activeTab, setActiveTab] = useState<number>(1);
     const [activeSubTab, setActiveSubTab] = useState<number>(0)
     const contentRef = useRef<HTMLDivElement>(null);
+    const containerSection = useRef<HTMLDivElement>(null);
 
+    useSplitText({
+            selector: ".split",
+            scope: containerSection,
+            y: 20,
+            type: "words",
+        })
 const t = useTranslations("TabSection");
     const activeTabObj = tabs.find((tab) => tab.id === activeTab);
     let activeImage = "";
@@ -45,7 +53,7 @@ const t = useTranslations("TabSection");
 
     return (
         <Container>
-            <div className="flex flex-col items-center justify-center gap-4">
+            <div ref={containerSection} className="flex flex-col items-center justify-center gap-4">
                 <p className="split font-bold text-[clamp(24px,4vw,40px)] leading-11 mb-4">
                     {t("title")}
                 </p>
@@ -54,7 +62,7 @@ const t = useTranslations("TabSection");
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`flex items-center justify-center gap-2 w-full py-2 rounded-md transition-colors duration-300 ${activeTab === tab.id
+                            className={`split flex items-center justify-center gap-2 w-full py-2 rounded-md transition-colors duration-300 ${activeTab === tab.id
                                 ? "text-primary"
                                 : ""
                                 }`}
@@ -73,7 +81,7 @@ const t = useTranslations("TabSection");
                                 className={`px-2 py-1 rounded-full transition-all duration-300 ${activeSubTab === index ? "bg-white shadow-lg" : ""
                                     }`}
                             >
-                                {sub}
+                                {t(`subTabs.${index}`)}
                             </button>
                         ))}
                     </div>

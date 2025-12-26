@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Container from "./components/Container";
 import React from "react";
@@ -8,16 +9,18 @@ const socialIcons = [
     { id: 1, icon: "/icons/facebook-icon.png", label: 'Facebook' },
     { id: 1, icon: "/icons/x-icon.png", label: 'X' }
 ]
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
     const container = React.useRef<HTMLElement>(null);
+    const t = useTranslations("Footer");
     useGSAP(() => {
         const split = SplitText.create(".split", { type: "lines" });
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: container.current,
                 start: "top 75%",
-                onEnter: () => tl.restart()
+                // onEnter: () => tl.restart()
             },
         });
         tl.from(split.lines, {
@@ -36,29 +39,31 @@ const Footer = () => {
                     <div className="col-span-1 md:col-span-2 flex flex-col gap-6 items-start">
                         <Image
                             src="/images/URIMPACT_LOGO-08.svg"
-                            alt="UrImpact Logo"
+                            alt={t("logo_alt")}
                             width={200}
                             height={50}
                         />
                         <p className="split text-sm leading-5 text-white/70">
-                            Monitor your tree planting projects from spafce with automated satellite monitoring and AI-driven insights.
+                            {t("description")}
                         </p>
                         <div className="flex flex-col gap-2 text-sm w-full">
-                            <span className="split font-medium text-sm leading-5">Subscribe to our newsletter</span>
-                            <div className="flex flex-col md:flex-row items-center gap-2 max-w-sm w-full">
+                            <span className="split font-medium text-sm leading-5">
+                                {t("newsletter_title")}
+                            </span>
+                            <div className="flex flex-col md:flex-row items-center gap-2 w-full">
                                 <input
                                     type="email"
-                                    placeholder="Enter your email"
-                                    className=" bg-white/5 border border-white/20 rounded-lg px-4 py-2.5 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30  w-full"
+                                    placeholder={t("email_placeholder")}
+                                    className="bg-white/5 border border-white/20 rounded-lg px-4 py-2.5 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 w-full"
                                 />
                                 <button
                                     className="bg-primary px-4 py-2 rounded-lg cursor-pointer w-full md:w-auto flex items-center justify-center"
-                                    aria-label="Subscribe"
+                                    aria-label={t("subscribe_button_aria")}
                                     type="submit"
                                 >
                                     <Image
                                         src="/icons/share-outline.svg"
-                                        alt="Send"
+                                        alt={t("send_icon_alt")}
                                         width={24}
                                         height={24}
                                     />
@@ -70,19 +75,19 @@ const Footer = () => {
                     {/* COMPANY */}
                     <div className="col-span-1 md:col-span-2 flex justify-end gap-20">
                         <div className="split flex flex-col gap-4 ">
-                            <span className="font-semibold text-sm leading-5">Company</span>
-                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">About Us</a>
-                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">See Forest</a>
-                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Services</a>
-                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Contact Us</a>
+                            <span className="font-semibold text-sm leading-5">{t("company_title")}</span>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("contact_us")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("services")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("see_forest")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("problems_&_solutions")}</a>
                         </div>
                         {/* LEGAL */}
                         <div className="split flex flex-col gap-4">
-                            <span className="font-semibold text-sm leading-5">Legal</span>
-                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Privacy Policy</a>
-                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Terms of Service</a>
-                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Cookie Policy</a>
-                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">Security</a>
+                            <span className="font-semibold text-sm leading-5">{t("legal_title")}</span>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("privacy_policy")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("terms_of_service")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("cookie_policy")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("security")}</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +95,7 @@ const Footer = () => {
                 <hr className="border-t border-white/20 my-8" />
                 <div className="flex items-center justify-between">
                     <p className="split text-center text-sm leading-5 text-white/50">
-                        © 2025 ForestWatch. All rights reserved.
+                        {t("copyright")}
                     </p>
                     <div className="flex items-center gap-2">
                         {

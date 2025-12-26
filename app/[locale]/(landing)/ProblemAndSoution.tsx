@@ -22,9 +22,8 @@ const ProblemAndSoution = () => {
 
     return (
         <Container>
-            <div ref={container} className="flex flex-col gap-16 items-start">
+            <div id="problems-and-solutions" ref={container} className="flex flex-col gap-16 items-start">
 
-                {/* Header */}
                 <FlexBetween className="gap-4">
                     <div className="bg-(--color-primary) rounded-[0.5px] w-1.5" />
                     <div className="flex flex-col gap-4">
@@ -37,10 +36,8 @@ const ProblemAndSoution = () => {
                     </div>
                 </FlexBetween>
 
-                {/* Content */}
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                    {/* Problem Side */}
                     <div className="flex flex-col gap-4">
                         <h3 className="split font-bold text-[clamp(16px,4vw,30px)] leading-7 text-[#2B3D4F]">
                             {t("problem_title")}
@@ -49,7 +46,6 @@ const ProblemAndSoution = () => {
                             {t("problem_description")}
                         </p>
 
-                        {/* Manual Process List */}
                         <ul className="flex flex-col gap-4 list-none">
                             {manualProcessFeatures.map((feature, i) => (
                                 <div key={`feature-${i}`} className="flex gap-4 items-center">
@@ -67,7 +63,6 @@ const ProblemAndSoution = () => {
                         </ul>
                     </div>
 
-                    {/* Solution Side */}
                     <div className="flex flex-col gap-4">
                         <h3 className="split font-bold text-[clamp(16px,4vw,30px)] leading-7 text-(--color-primary)">
                             {t("solution_title")}
