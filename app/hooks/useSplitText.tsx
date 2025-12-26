@@ -38,7 +38,7 @@ export const useSplitText = ({
             scrollTrigger: {
                 trigger: scope.current,
                 start,
-                onEnter: () => tl.restart(),
+                // onEnter: () => tl.restart(),
             }
         })
         const target =
@@ -56,6 +56,6 @@ export const useSplitText = ({
             duration,
             ease
         });
-        
+
     }, { scope: scope })
 }
