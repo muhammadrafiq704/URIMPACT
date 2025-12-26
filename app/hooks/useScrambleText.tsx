@@ -40,7 +40,7 @@ export function useScrambleText({
                     scrollTrigger: {
                         trigger: el,
                         start: "top 80%",
-                        toggleActions: "restart none none none",
+                        // toggleActions: "play none none none",
                     },
                 });
             });
