@@ -37,7 +37,7 @@ const SeeForest = () => {
     }, { scope: container });
     return (
         <Container>
-            <div ref={container} className="flex flex-col gap-16 items-start">
+            <div id="see-forest" ref={container} className="flex flex-col gap-16 items-start">
                 <FlexBetween className="gap-4">
                     <div className="bg-(--color-primary) rounded-[0.5px] w-1.5" />
                     <div className="flex flex-col gap-4">

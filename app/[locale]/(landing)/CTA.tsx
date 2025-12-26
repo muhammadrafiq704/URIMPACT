@@ -14,7 +14,7 @@ const CTA = () => {
             scrollTrigger: {
                 trigger: container.current,
                 start: "top 75%",
-                onEnter: () => tl.restart(),
+                // onEnter: () => tl.restart(),
             },
         });
 
@@ -31,7 +31,7 @@ const CTA = () => {
             });
     }, { scope: container });
     return (
-        <div ref={container} style={{
+        <div id="contact-us" ref={container} style={{
             backgroundImage: "url('/images/background.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',

@@ -3,6 +3,12 @@ import Image from "next/image";
 import Container from "./components/Container";
 import React from "react";
 import { useGSAP, gsap, SplitText } from "@/app/lib/gsap";
+
+const socialIcons = [
+    { id: 1, icon: "/icons/linkedin-icon.png", label: 'LinkedIn' },
+    { id: 1, icon: "/icons/facebook-icon.png", label: 'Facebook' },
+    { id: 1, icon: "/icons/x-icon.png", label: 'X' }
+]
 import { useTranslations } from "next-intl";
 
 const Footer = () => {
@@ -14,7 +20,7 @@ const Footer = () => {
             scrollTrigger: {
                 trigger: container.current,
                 start: "top 75%",
-                onEnter: () => tl.restart()
+                // onEnter: () => tl.restart()
             },
         });
         tl.from(split.lines, {
@@ -28,8 +34,8 @@ const Footer = () => {
     return (
         <footer ref={container} className="bg-[#2B3D4F] text-white">
             <Container>
-                <div className="grid grid-cols-1 md:grid-cols-6 gap-12">
-                    {/* LOGO AND NEWSLETTER */}
+                <div className=" grid grid-cols-1 md:grid-cols-4 gap-12 items-center justify-center">
+
                     <div className="col-span-1 md:col-span-2 flex flex-col gap-6 items-start">
                         <Image
                             src="/images/URIMPACT_LOGO-08.svg"
@@ -66,87 +72,44 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* PRODUCT */}
-                    <div className="split flex flex-col gap-4">
-                        <span className="font-semibold text-sm leading-5">
-                            {t("product_title")}
-                        </span>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("features")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("pricing")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("api")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("integration")}
-                        </a>
-                    </div>
-
                     {/* COMPANY */}
-                    <div className="split flex flex-col gap-4">
-                        <span className="font-semibold text-sm leading-5">
-                            {t("company_title")}
-                        </span>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("about")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("blog")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("careers")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("contact")}
-                        </a>
-                    </div>
-
-                    {/* RESOURCES */}
-                    <div className="split flex flex-col gap-4">
-                        <span className="font-semibold text-sm leading-5">
-                            {t("resources_title")}
-                        </span>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("documentation")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("help_center")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("case_studies")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("webinars")}
-                        </a>
-                    </div>
-                    {/* LEGAL */}
-                    <div className="split flex flex-col gap-4">
-                        <span className="font-semibold text-sm leading-5">
-                            {t("legal_title")}
-                        </span>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("privacy_policy")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("terms_of_service")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("cookie_policy")}
-                        </a>
-                        <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">
-                            {t("security")}
-                        </a>
+                    <div className="col-span-1 md:col-span-2 flex justify-end gap-20">
+                        <div className="split flex flex-col gap-4 ">
+                            <span className="font-semibold text-sm leading-5">{t("company_title")}</span>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("contact_us")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("services")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("see_forest")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("problems_&_solutions")}</a>
+                        </div>
+                        {/* LEGAL */}
+                        <div className="split flex flex-col gap-4">
+                            <span className="font-semibold text-sm leading-5">{t("legal_title")}</span>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("privacy_policy")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("terms_of_service")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("cookie_policy")}</a>
+                            <a href="#" className="text-sm leading-5 text-white/70 hover:text-white">{t("security")}</a>
+                        </div>
                     </div>
                 </div>
 
                 <hr className="border-t border-white/20 my-8" />
-
-                <p className="split text-center text-sm leading-5 text-white/50">
-                    {t("copyright")}
-                </p>
+                <div className="flex items-center justify-between">
+                    <p className="split text-center text-sm leading-5 text-white/50">
+                        {t("copyright")}
+                    </p>
+                    <div className="flex items-center gap-2">
+                        {
+                            socialIcons.map((social) => (<Image
+                                key={social.id}
+                                src={social.icon}
+                                alt={social.label}
+                                width={18}
+                                height={18}
+                            />
+                            ))
+                        }
+                    </div>
+                </div>
             </Container>
         </footer>
     );

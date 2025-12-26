@@ -3,6 +3,12 @@
     "title": "URIMPACT | الصفحة الرئيسية",
     "description": "الصفحة الرئيسية لـ Urimpact"
   },
+  "Navbar": [
+  { "label": "تواصل معنا", "id": "contact-us" },
+  { "label": "الخدمات", "id": "services" },
+  { "label": "المشاكل والحلول", "id": "problems-and-solutions" },
+  { "label": "رؤية الغابات", "id": "see-forest" }
+],
   "HeroSection": {
     "LeftContent": {
       "chip_label": "مراقبة الغابات عبر الأقمار الصناعية",
@@ -33,9 +39,9 @@
   "TrustedSection": {
     "title": "موثوق من قبل منظمات رائدة",
     "stats": [
-      { "label": "مشاريع تحت المراقبة" },
-      { "label": "أشجار تم التحقق منها" },
-      { "label": "شركاء عالميون" }
+      { "label": "المشاريع التي تم مراقبتها", "value": "10,000+" },
+      { "label": "الأشجار التي تم التحقق منها", "value": "50+" },
+      { "label": "الشركاء العالميون", "value": "15" }
     ]
   },
   "ServicesSection": {
@@ -126,6 +132,19 @@
       }
     ]
   },
+  "TabSection": {
+  "title": "اكتشف المنصات",
+  "tabs": [
+    "البدء",
+    "لوحة التحكم",
+    "النطاق 1 و 2",
+    "Urmipact الذكاء الاصطناعي",
+    "الموردون",
+    "الشهادة"
+  ],
+  "subTabs": ["لوحة التحكم 1", "لوحة التحكم 2"]
+},
+
   "ServicesDetailsSection": {
   "tick_icon_alt": "أيقونة علامة صح",
   "services": [
@@ -201,36 +220,26 @@
 },
 "Footer": {
   "logo_alt": "شعار URIMPACT",
-  "description": "راقب مشاريع زراعة الأشجار الخاصة بك من الفضاء باستخدام مراقبة الأقمار الصناعية الآلية والرؤى المدعومة بالذكاء الاصطناعي.",
-  "newsletter_title": "اشترك في نشرتنا الإخبارية",
+  "description": "راقِب مشاريع زراعة الأشجار الخاصة بك من الفضاء باستخدام المراقبة الساتلية الآلية والرؤى المدعومة بالذكاء الاصطناعي.",
+  
+  "newsletter_title": "اشترك في النشرة البريدية",
   "email_placeholder": "أدخل بريدك الإلكتروني",
-  "subscribe_button_aria": "اشتراك",
+  "subscribe_button_aria": "اشترك",
   "send_icon_alt": "إرسال",
   
-  "product_title": "المنتج",
-  "features": "الميزات",
-  "pricing": "التسعير",
-  "api": "API",
-  "integration": "التكامل",
-  
   "company_title": "الشركة",
-  "about": "عن الشركة",
-  "blog": "المدونة",
-  "careers": "الوظائف",
-  "contact": "اتصل بنا",
-  
-  "resources_title": "الموارد",
-  "documentation": "التوثيق",
-  "help_center": "مركز المساعدة",
-  "case_studies": "دراسات الحالة",
-  "webinars": "الندوات عبر الإنترنت",
+  "contact_us": "تواصل معنا",
+  "services": "الخدمات",
+  "see_forest": "شاهد الغابات",
+  "problems_&_solutions": "المشاكل والحلول",
   
   "legal_title": "قانوني",
   "privacy_policy": "سياسة الخصوصية",
   "terms_of_service": "شروط الخدمة",
-  "cookie_policy": "سياسة الكوكيز",
+  "cookie_policy": "سياسة ملفات تعريف الارتباط",
   "security": "الأمان",
   
   "copyright": "© 2025 URIMPACT. جميع الحقوق محفوظة."
 }
+
 }

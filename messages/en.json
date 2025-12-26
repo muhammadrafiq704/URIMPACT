@@ -3,6 +3,12 @@
     "title": "URIMPACT | Landing Page",
     "description": "Urimpact landing page"
   },
+  "Navbar": [
+  { "label": "Contact Us", "id": "contact-us" },
+  { "label": "Services", "id": "services" },
+  { "label": "Problem & Solutions", "id": "problems-and-solutions" },
+  { "label": "See Forest", "id": "see-forest" }
+],
   "HeroSection": {
     "LeftContent": {
       "chip_label": "Satellite Forest Monitoring",
@@ -33,9 +39,9 @@
   "TrustedSection": {
     "title": "Trusted by Leading Organizations",
     "stats": [
-      { "label": "Projects Monitored" },
-      { "label": "Trees Verified" },
-      { "label": "Global Partners" }
+      { "label": "Projects Monitored", "value": "10,000+" },
+      { "label": "Trees Verified", "value": "50+" },
+      { "label": "Global Partners", "value": "15" }
     ]
   },
   "ServicesSection": {
@@ -130,6 +136,18 @@
       }
     ]
   },
+  "TabSection": {
+    "title": "Discover the Platforms",
+    "tabs": [
+      "Onboarding",
+      "Dashboard",
+      "Scope 1&2",
+      "Urmipact AI",
+      "Suppliers",
+      "Certificate"
+    ],
+    "subTabs":["Dashboard 1", "Dashboard 2"]
+  },
 
   "ServicesDetailsSection": {
   "tick_icon_alt": "Check icon",
@@ -213,23 +231,12 @@
   "subscribe_button_aria": "Subscribe",
   "send_icon_alt": "Send",
   
-  "product_title": "Product",
-  "features": "Features",
-  "pricing": "Pricing",
-  "api": "API",
-  "integration": "Integration",
   
   "company_title": "Company",
-  "about": "About",
-  "blog": "Blog",
-  "careers": "Careers",
-  "contact": "Contact",
-  
-  "resources_title": "Resources",
-  "documentation": "Documentation",
-  "help_center": "Help Center",
-  "case_studies": "Case Studies",
-  "webinars": "Webinars",
+  "contact_us": "Contact Us",
+  "services": "Services",
+  "see_forest": "See Forest",
+  "problems_&_solutions": "Problems & Solutions",
   
   "legal_title": "Legal",
   "privacy_policy": "Privacy Policy",
