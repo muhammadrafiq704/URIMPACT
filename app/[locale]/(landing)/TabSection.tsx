@@ -4,20 +4,23 @@ import Image from "next/image";
 import Container from "./components/Container";
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
+import { useTranslations } from "next-intl";
 
 const tabs = [
-    { id: 1, icon: "/icons/onboarding.svg", label: "Onboarding", image: "/images/onboarding.png" },
-    { id: 2, icon: "/icons/dashboard.svg", label: "Dashboard", sub_tab: ["Dashboard 1", "Dashboard 2"], image: ["/images/dashboard1.png", "/images/dashboard2.png"] },
-    { id: 3, icon: "/icons/scope.svg", label: "Scope 1&2", image: "/images/scope.png" },
-    { id: 4, icon: "/icons/ai.svg", label: "Urimpact AI", image: "/images/urimpact-ai.png" },
-    { id: 5, icon: "/icons/ai.svg", label: "Suppliers", image: "/images/suppliers.png" },
-    { id: 6, icon: "/icons/ai.svg", label: "Certificate", image: "/images/onboarding.png" },
+    { id: 1, icon: "/icons/onboarding.svg", label: "Onboarding-icon", image: "/images/onboarding.png" },
+    { id: 2, icon: "/icons/dashboard.svg", label:"Dashboard-icon", sub_tab: ["Dashboard 1", "Dashboard 2"], image: ["/images/dashboard1.png", "/images/dashboard2.png"] },
+    { id: 3, icon: "/icons/scope.svg", label: "Scope 1&2-icon", image: "/images/scope.png" },
+    { id: 4, icon: "/icons/ai.svg", label: "Urimpact AI-icon", image: "/images/urimpact-ai.png" },
+    { id: 5, icon: "/icons/ai.svg", label: "Suppliers-icon", image: "/images/suppliers.png" },
+    { id: 6, icon: "/icons/ai.svg", label: "Certificate-icon", image: "/images/onboarding.png" },
 ];
 
 const TabSection = () => {
     const [activeTab, setActiveTab] = useState<number>(1);
     const [activeSubTab, setActiveSubTab] = useState<number>(0)
     const contentRef = useRef<HTMLDivElement>(null);
+
+const t = useTranslations("TabSection");
     const activeTabObj = tabs.find((tab) => tab.id === activeTab);
     let activeImage = "";
     if (activeTabObj?.sub_tab && activeTabObj.image instanceof Array) {
@@ -43,8 +46,11 @@ const TabSection = () => {
     return (
         <Container>
             <div className="flex flex-col items-center justify-center gap-4">
+                <p className="split font-bold text-[clamp(24px,4vw,40px)] leading-11 mb-4">
+                    {t("title")}
+                </p>
                 <div className="flex w-full gap-2 border-b border-[#E8D5B7] py-4">
-                    {tabs.map((tab) => (
+                    {tabs.map((tab,i) => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
@@ -54,7 +60,7 @@ const TabSection = () => {
                                 }`}
                         >
                             <Image src={tab.icon} alt={tab.label} width={24} height={24} />
-                            <p className="text-lg font-semibold">{tab.label}</p>
+                            <p className="text-lg font-semibold">{t(`tabs.${i}`)}</p>
                         </button>
                     ))}
                 </div>

@@ -11,20 +11,22 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { SplitText } from "gsap/SplitText"
 import gsap from "gsap"
 import TabSection from "./TabSection"
+import Navbar from "./Navbar"
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Landing = () => {
     return (
         <>
+            <Navbar />
             <Hero />
-            <SeeForest/>
-            <Trusted/>
-            <TabSection/>
-            <Services/>
-            <ProblemAndSoution/>
-            <ServicesDetails/>
-            <CTA/>
+            <SeeForest />
+            <Trusted />
+            <TabSection />
+            <Services />
+            <ProblemAndSoution />
+            <ServicesDetails />
+            <CTA />
             <Footer />
         </>
     )

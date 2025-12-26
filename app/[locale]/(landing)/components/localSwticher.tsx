@@ -34,7 +34,7 @@ export default function LocaleSwitcher({ currentLocale }: Props) {
     }
 
     return (
-        <div ref={ref} className="fixed top-6 right-8 z-50 flex flex-col items-end">
+        <div ref={ref} className='relative flex items-center justify-center'>
             <button 
                 onClick={() => setOpen(!open)} 
                 disabled={isPending}
@@ -50,7 +50,7 @@ export default function LocaleSwitcher({ currentLocale }: Props) {
             </button>
 
             {open && (
-                <ul className="absolute top-12 right-0 bg-white shadow-xl rounded-lg mt-1 p-2 min-w-30">
+                <ul className={`absolute top-12 ${currentLocale ==="ar" ? 'left-0' :"right-0"}  bg-white shadow-xl rounded-lg mt-1 p-2 min-w-30`}>
                     {routing.locales.map((l) => (
                         <li key={l}>
                             <button

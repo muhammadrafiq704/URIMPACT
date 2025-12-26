@@ -3,14 +3,17 @@ import {
   ProblemAndSolutionFeatureItem,
   Service,
   ServicesDetailsProps,
-  StatItem,
 } from "./types";
 
-export const stats: StatItem[] = [
-  { value: "10,000+", label: "Hectares Monitored" },
-  { value: "50+", label: "Projects" },
-  { value: "15", label: "Countries" },
-];
+
+
+export const navbar=[
+  {id:1, title:"About Us", href:"about-us"},
+  {id:2, title:"Contact", href:"contact-us"},
+  {id:3, title:"Services", href:"services"},
+  {id:4, title:"Problems & Solutions", href:"problem-and-solution"},
+  {id:5, title:"See Forest", href:"see-forest"},
+]
 
 export const images = [
   "/images/image 1.png",
