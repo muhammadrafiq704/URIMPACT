@@ -76,7 +76,7 @@ const Hero = () => {
                             <FlexBetween className="gap-2 items-center">
                                 <Image src="/icons/audit.svg" alt="Audit Icon" width={16} height={16} />
                                 <p className="text-[16px] font-normal leading-5 opacity-70 text-(--color-secondary)">
-                                     {t("LeftContent.marque_label_3")}
+                                    {t("LeftContent.marque_label_3")}
                                 </p>
                             </FlexBetween>
 

@@ -31,7 +31,7 @@ const SeeForest = () => {
             scrollTrigger: {
                 trigger: container.current,
                 start: "top 75%",
-                toggleActions: "restart none none none"
+                toggleActions: "play none none none"
             }
         });
     }, { scope: container });
@@ -41,10 +41,10 @@ const SeeForest = () => {
                 <FlexBetween className="gap-4">
                     <div className="bg-(--color-primary) rounded-[0.5px] w-1.5" />
                     <div className="flex flex-col gap-4">
-                        <p className="split font-bold text-[clamp(24px,4vw,40px)] tracking-[-0.9px] leading-11">
+                        <p className="split font-bold text-[clamp(24px,4vw,40px)] overflow-hidden tracking-[-0.9px] leading-11">
                             {t("title")}
                         </p>
-                        <p className="split font-normal text-[16px] leading-6 text-[#5B6671]">
+                        <p className="split font-normal text-[16px] leading-6 text-[#5B6671] overflow-hidden">
                             {t("subtitle")}
                         </p>
                     </div>
