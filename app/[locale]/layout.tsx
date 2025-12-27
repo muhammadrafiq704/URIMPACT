@@ -5,7 +5,6 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getMessages, setRequestLocale } from "next-intl/server";
-// import LocaleSwitcher from "./(landing)/components/localSwticher";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -51,7 +50,6 @@ export default async function RootLayout({
         className={`${inter.variable}`}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {/* <LocaleSwitcher currentLocale={locale} /> */}
           {children}
         </NextIntlClientProvider>
       </body>

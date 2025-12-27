@@ -3,7 +3,7 @@ import LocaleSwitcher from "./components/localSwticher"
 import { useParams } from "next/navigation"
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import ContactModal from "./ContactModal";
+import ContactModal from "./components/ContactModal";
 
 export type Locale = "en" | "ar";
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const [openMenu, setOpenMenu] = useState<boolean>(false)
     const [openContactModal, setOpenContactModal] = useState<boolean>(false)
-    console.log('openContactModal', openContactModal)
+    // console.log('openContactModal', openContactModal)
     const params = useParams();
     const supportedLocales: Locale[] = ["en", "ar"];
     const locale: Locale = supportedLocales.includes(params.locale as Locale)
@@ -35,7 +35,8 @@ const Navbar = () => {
                             alt="logo-image"
                             width={200}
                             height={40}
-                            className="object-contain"
+                            className="object-contain cursor-pointer"
+                            onClick={() => scrollToSection("hero-section")}
                         />
                         <div className="flex items-center justify-center gap-8">
                             <div className="hidden lg:flex items-center justify-center">
@@ -67,7 +68,7 @@ const Navbar = () => {
                                 <button
                                     key={item.id}
                                     onClick={() => {
-                                        if (item.label === "Contact Us") {
+                                        if (item.label === "Contact Us" || item.label === "تواصل معنا") {
                                             setOpenContactModal(true);
                                         } else {
                                             scrollToSection(item.id);

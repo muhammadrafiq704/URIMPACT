@@ -9,9 +9,10 @@ type ButtonProps = {
     onClick?: () => void;
     text: string;
     icon?: string;
+    className?: string
 };
 
-const Button = ({ variant = "contained", onClick, text, icon }: ButtonProps) => {
+const Button = ({ variant = "contained", onClick, text, icon, className }: ButtonProps) => {
     const btnRef = useRef<HTMLButtonElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
 const params = useParams();
@@ -54,8 +55,8 @@ const {locale} = params;
                     ? "bg-(--color-primary) text-white hover:bg-[#077168]"
                     : "text-(--color-primary) border-2 border-(--color-primary) hover:bg-(--color-primary) hover:text-[#FFFFFF]"
                 } 
-        px-8 py-2.5 text-lg leading-7 flex items-center gap-1 font-semibold cursor-pointer transition-all duration-500 ease-in-out overflow-hidden rounded-xl
-      `}
+        px-8 py-2.5 text-lg leading-7 flex items-center justify-center gap-1 font-semibold cursor-pointer transition-all duration-500 ease-in-out overflow-hidden rounded-xl
+      ${className}`}
             onClick={onClick}
             style={
                 variant === "contained"
