@@ -43,10 +43,10 @@ const Hero = () => {
         })
     }, { scope: container });
     return (
-        <section ref={container} className=" min-h-screen relative px-6 md:px-20 flex items-center justify-center">
-            {/* LEFT SECTION  */}
+        <section id="hero-section" ref={container} className=" min-h-screen relative px-6 md:px-20 flex items-center justify-center">
             {/* hero container */}
             <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-12">
+            {/* LEFT SECTION  */}
                 <div className="md:w-8/12 w-full flex flex-col items-start gap-8 mt-10 md:mt-0">
                     <span className="hero-title uppercase font-semibold text-sm leading-5 tracking-[1.4px] text-(--color-primary)">{t("LeftContent.chip_label")}</span>
                     <p className="hero-title text-[clamp(28px,4vw,48px)] font-bold leading-12 -tracking-[1.2px] text-(-color-secondary)">{t("LeftContent.title")} <span className="text-(--color-primary)">{t("LeftContent.span_title")}</span></p>

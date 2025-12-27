@@ -40,11 +40,11 @@ export default function MultiSelectDropdown({ placeholder, options }: MultiSelec
   return (
     <div className="relative w-full" ref={containerRef}>
       <div
-        className="flex flex-wrap items-center gap-2 border border-black/20 rounded-lg bg-secondary/10 px-3 py-2 cursor-pointer"
+        className="flex flex-wrap items-center gap-2 border border-black/20 rounded-lg bg-primary/10 px-3 py-2 cursor-pointer"
         onClick={toggleDropdown}
       >
         {selected.map((item) => (
-          <span key={item.value} className="flex items-center bg-secondary/20 px-2 py-1 rounded-lg text-sm">
+          <span key={item.value} className="flex items-center bg-primary/20 px-2 py-1 rounded-lg text-sm">
             {item.label}
             <button
               onClick={(e) => { e.stopPropagation(); removeOption(item.value); }}
