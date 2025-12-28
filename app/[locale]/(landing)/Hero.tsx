@@ -136,7 +136,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className="absolute top-0 right-0 -z-10 pointer-events-none select-none max-w-full overflow-hidden">
+            {/* <div className="absolute top-0 right-0 -z-10 pointer-events-none select-none max-w-full overflow-hidden">
                 <Image
                     src="/images/background-overlay-image.png"
                     alt="Background Overlay"
@@ -145,7 +145,7 @@ const Hero = () => {
                     priority={true}
                     className="max-w-[90vw] md:max-w-none"
                 />
-            </div>
+            </div> */}
         </section>
     )
 }

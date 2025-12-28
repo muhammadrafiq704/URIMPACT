@@ -57,7 +57,7 @@ const TabSection = () => {
                 <p className="split font-bold text-[clamp(24px,4vw,40px)] leading-11 mb-4">
                     {t("title")}
                 </p>
-                <div className="flex flex-wrap w-full gap-2 border-b border-[#E8D5B7] py-4">
+                <div className="flex flex-wrap items-center justify-evenly w-full gap-2 border-b border-[#E8D5B7] py-4">
                     {tabs.map((tab, i) => (
                         <button
                             key={tab.id}

@@ -6,6 +6,8 @@
   --foreground: #22262A;
   --primary: #00B8A9;
   --secondary: #2C3E50;
+    --font-inter: 'Inter', sans-serif;
+  --font-varelaRound: 'Varela Round', sans-serif;
 }
 
 @theme inline {
@@ -33,6 +35,10 @@ body {
   font-family: var(--font-inter);
   /* border: 1px solid red; */
   overflow-x: hidden;
+}
+
+html[lang="ar"] body {
+  font-family: var(--font-varelaRound), 'Cairo', sans-serif;
 }
 
 /* MARQUE ANIMATION EFFECT  */
