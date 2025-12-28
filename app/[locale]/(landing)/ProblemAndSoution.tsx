@@ -6,10 +6,10 @@ import FlexBetween from "./components/FlexBetween"
 import { benefits, manualProcessFeatures } from "./utils"
 import { useRef } from "react"
 import { useSplitText } from "@/app/hooks/useSplitText"
-import { useTranslations } from "next-intl"          
+import { useTranslations } from "next-intl"
 
 const ProblemAndSoution = () => {
-    const t = useTranslations("ProblemSolution")     
+    const t = useTranslations("ProblemSolution")
     const container = useRef<HTMLDivElement>(null);
 
     useSplitText({

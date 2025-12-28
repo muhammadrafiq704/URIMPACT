@@ -43,21 +43,19 @@ const Hero = () => {
         })
     }, { scope: container });
     return (
-        <section id="hero-section" ref={container} className=" min-h-screen relative px-6 md:px-20 flex items-center justify-center">
-            {/* hero container */}
-            <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-12">
-            {/* LEFT SECTION  */}
-                <div className="md:w-8/12 w-full flex flex-col items-start gap-8 mt-10 md:mt-0">
+        <section id="hero-section" ref={container} className="min-h-screen w-full relative px-6 md:px-20 flex items-center justify-center">
+            <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 ">
+                <div className="md:w-7/12 flex flex-col items-start gap-4 md:gap-8 mt-10 md:mt-0 w-full">
                     <span className="hero-title uppercase font-semibold text-sm leading-5 tracking-[1.4px] text-(--color-primary)">{t("LeftContent.chip_label")}</span>
-                    <p className="hero-title text-[clamp(28px,4vw,48px)] font-bold leading-12 -tracking-[1.2px] text-(-color-secondary)">{t("LeftContent.title")} <span className="text-(--color-primary)">{t("LeftContent.span_title")}</span></p>
-                    <p className="hero-title text-[clamp(16px,4vw,24px)] font-normal leading-7 text-(--color-secondary) opacity-90">{t("LeftContent.sub_title")}</p>
+                    <p className="hero-title text-[clamp(28px,4vw,48px)] font-bold leading-8 md:leading-12 -tracking-[1.2px] text-(-color-secondary)">{t("LeftContent.title")} <span className="text-(--color-primary)">{t("LeftContent.span_title")}</span></p>
+                    <p className="hero-title text-[clamp(14px,4vw,24px)] font-normal leading-5 md:leading-7 text-(--color-secondary) opacity-90">{t("LeftContent.sub_title")}</p>
                     <Button
                         text={t("LeftContent.btn_text")}
                         variant="contained"
                         icon={ArrowIcon}
                     />
-                    <div className="w-full overflow-hidden">
-                        <div className="marque-animation flex items-center gap-6 whitespace-nowrap">
+                    <div className="w-full overflow-hidden ">
+                        <div className="marque-animation flex items-center gap-6 whitespace-nowrap overflow-hidden">
 
                             <FlexBetween className="gap-2 items-center">
                                 <Image src="/icons/satellite.svg" alt="Satellite Icon" width={16} height={16} />
@@ -84,7 +82,6 @@ const Hero = () => {
                     </div>
 
                 </div>
-                {/* RIGHT SECTION  */}
                 <div className="right-element w-full md:w-5/12 flex items-center justify-center md:justify-end">
                     <div className="relative flex flex-col gap-3 bg-white rounded-lg border border-[#EDF1F3] p-4.5 w-full " style={{ boxShadow: "0px 24px 64px 0px #2B3D4F33" }}>
                         <FlexBetween className="justify-between">
@@ -103,7 +100,7 @@ const Hero = () => {
                                 }}
                             />
                         </div>
-                        <FlexBetween className="justify-between gap-3">
+                        <FlexBetween className="justify-between gap-1 md:gap-3">
                             <div className="rounded-lg bg-[#F6F8F9] p-3 text-center w-full">
                                 <p className="text-[#2B3D4F] font-bold text-lg leading-7 mb-1 stat-value">{t("RightContent.stats1_title")}</p>
                                 <p className="text-[#657586] font-normal text-xs leading-4 mb-1">{t("RightContent.stats1_sub_title")}</p>
@@ -120,7 +117,7 @@ const Hero = () => {
                                 <p className="text-(--color-primary) font-medium text-xs leading-4 stat-value">{t("RightContent.stats3_count_per")}</p>
                             </div>
                         </FlexBetween>
-                        <div className="floating-overlay absolute -bottom-7 -left-4 md:-left-6 flex items-center gap-3 p-3 rounded-lg bg-[#FFFFFF] border border-[#EDF1F3] shadow-[0px 4px 16px 0px #2B3D4F14]"
+                        <div className="floating-overlay absolute -bottom-7 left-0 md:-left-6 flex items-center gap-3 p-3 rounded-lg bg-[#FFFFFF] border border-[#EDF1F3] shadow-[0px 4px 16px 0px #2B3D4F14]"
                             style={{
                                 boxShadow: "0px 4px 16px 0px #2B3D4F14"
                             }}
@@ -139,14 +136,14 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            {/* BACKGROUND OVERLAY IMAGE  */}
-            <div className="absolute top-0 right-0 -z-10 pointer-events-none select-none">
+            <div className="absolute top-0 right-0 -z-10 pointer-events-none select-none max-w-full overflow-hidden">
                 <Image
                     src="/images/background-overlay-image.png"
                     alt="Background Overlay"
                     width={600}
                     height={600}
                     priority={true}
+                    className="max-w-[90vw] md:max-w-none"
                 />
             </div>
         </section>

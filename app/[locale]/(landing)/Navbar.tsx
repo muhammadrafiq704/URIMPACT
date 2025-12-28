@@ -28,17 +28,17 @@ const Navbar = () => {
     return (
         <>
             <div className="w-full h-18 flex items-center justify-center backdrop-blur-lg fixed top-0 left-0 bg-black/20 shadow-sm border-b border-white/20 z-99">
-                <div className="max-w-7xl px-6 md:px-10 mx-auto w-full">
+                <div className="max-w-7xl mx-auto w-full px-4 md:px-10 ">
                     <div className="flex items-center justify-between">
                         <Image
                             src="/images/URIMPACT_LOGO-08.svg"
                             alt="logo-image"
                             width={200}
                             height={40}
-                            className="object-contain cursor-pointer"
+                            className="object-contain cursor-pointer w-35 md:w-50 md:h-10 "
                             onClick={() => scrollToSection("hero-section")}
                         />
-                        <div className="flex items-center justify-center gap-8">
+                        <div className="flex items-center justify-center gap-4 md:gap-8">
                             <div className="hidden lg:flex items-center justify-center">
                                 <div className="flex items-center gap-6">
                                     {navbar.map((item) => (

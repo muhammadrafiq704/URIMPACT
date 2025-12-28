@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Landing = () => {
     return (
-        <>
+        <div className=" overflow-hidden">
             <Navbar />
             <Hero />
             <SeeForest />
@@ -28,7 +28,7 @@ const Landing = () => {
             <ServicesDetails />
             <CTA />
             <Footer />
-        </>
+        </div>
     )
 }
 

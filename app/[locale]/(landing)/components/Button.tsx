@@ -55,7 +55,7 @@ const {locale} = params;
                     ? "bg-(--color-primary) text-white hover:bg-[#077168]"
                     : "text-(--color-primary) border-2 border-(--color-primary) hover:bg-(--color-primary) hover:text-[#FFFFFF]"
                 } 
-        px-8 py-2.5 text-lg leading-7 flex items-center justify-center gap-1 font-semibold cursor-pointer transition-all duration-500 ease-in-out overflow-hidden rounded-xl
+         px-4 md:px-8 py-2.5 text-[clamp(14px,4vw,18px)] leading-7 flex items-center justify-center gap-1 font-semibold cursor-pointer transition-all duration-500 ease-in-out overflow-hidden rounded-xl
       ${className}`}
             onClick={onClick}
             style={

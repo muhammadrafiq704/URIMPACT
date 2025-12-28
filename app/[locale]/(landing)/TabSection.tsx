@@ -9,7 +9,7 @@ import { useSplitText } from "@/app/hooks/useSplitText";
 
 const tabs = [
     { id: 1, icon: "/icons/onboarding.svg", label: "Onboarding-icon", image: "/images/onboarding.png" },
-    { id: 2, icon: "/icons/dashboard.svg", label:"Dashboard-icon", sub_tab: ["Dashboard 1", "Dashboard 2"], image: ["/images/dashboard1.png", "/images/dashboard2.png"] },
+    { id: 2, icon: "/icons/dashboard.svg", label: "Dashboard-icon", sub_tab: ["Dashboard 1", "Dashboard 2"], image: ["/images/dashboard1.png", "/images/dashboard2.png"] },
     { id: 3, icon: "/icons/scope.svg", label: "Scope 1&2-icon", image: "/images/scope.png" },
     { id: 4, icon: "/icons/ai.svg", label: "Urimpact AI-icon", image: "/images/urimpact-ai.png" },
     { id: 5, icon: "/icons/ai.svg", label: "Suppliers-icon", image: "/images/suppliers.png" },
@@ -23,12 +23,12 @@ const TabSection = () => {
     const containerSection = useRef<HTMLDivElement>(null);
 
     useSplitText({
-            selector: ".split",
-            scope: containerSection,
-            y: 20,
-            type: "words",
-        })
-const t = useTranslations("TabSection");
+        selector: ".split",
+        scope: containerSection,
+        y: 20,
+        type: "words",
+    })
+    const t = useTranslations("TabSection");
     const activeTabObj = tabs.find((tab) => tab.id === activeTab);
     let activeImage = "";
     if (activeTabObj?.sub_tab && activeTabObj.image instanceof Array) {
@@ -52,17 +52,17 @@ const t = useTranslations("TabSection");
     }, [activeTab]);
 
     return (
-        <Container>
-            <div ref={containerSection} className="flex flex-col items-center justify-center gap-4">
+        <section ref={containerSection} className="flex flex-col items-center justify-center w-full">
+            <Container className="flex flex-col items-center justify-center gap-4">
                 <p className="split font-bold text-[clamp(24px,4vw,40px)] leading-11 mb-4">
                     {t("title")}
                 </p>
-                <div className="flex w-full gap-2 border-b border-[#E8D5B7] py-4">
-                    {tabs.map((tab,i) => (
+                <div className="flex flex-wrap w-full gap-2 border-b border-[#E8D5B7] py-4">
+                    {tabs.map((tab, i) => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`split flex items-center justify-center gap-2 w-full py-2 rounded-md transition-colors duration-300 ${activeTab === tab.id
+                            className={`split flex items-center justify-center gap-2 py-2 rounded-md transition-colors duration-300 ${activeTab === tab.id
                                 ? "text-primary"
                                 : ""
                                 }`}
@@ -88,7 +88,7 @@ const t = useTranslations("TabSection");
                 )}
                 <div
                     ref={contentRef}
-                    className="w-full h-150 overflow-auto overflow-x-hidden py-2 flex justify-center items-start border border-gray-200 rounded-md"
+                    className="w-full h-60 md:h-150 overflow-auto overflow-x-hidden py-2 flex justify-center items-start border border-gray-200 rounded-md"
                 >
                     {activeImage && (
                         <Image
@@ -100,8 +100,8 @@ const t = useTranslations("TabSection");
                         />
                     )}
                 </div>
-            </div>
-        </Container>
+            </Container>
+        </section>
     );
 };
 
