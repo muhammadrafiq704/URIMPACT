@@ -41,7 +41,7 @@
     "stats": [
       { "label": "Projects Monitored", "value": "10,000+" },
       { "label": "Trees Verified", "value": "50+" },
-      { "label": "Global Partners", "value": "15" }
+      { "label": "Global Partners", "value": "3" }
     ]
   },
   "ServicesSection": {
@@ -141,8 +141,8 @@
     "tabs": [
       "Onboarding",
       "Dashboard",
-      "Scope 1&2",
-      "Urmipact AI",
+      "Scope 1,2,3",
+      "URIMPACT AI",
       "Suppliers",
       "Certificate"
     ],
