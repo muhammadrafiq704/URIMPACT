@@ -26,7 +26,7 @@ const Trusted = () => {
     // const keys = Object.keys(messages.TrustedSection.stats)
     // console.log('keys', keys)
     const stats = t.raw("stats") as { label: string, value: string }[];
-// console.log('stats', stats)
+    // console.log('stats', stats)
     return (
         <Container>
             <div ref={container} className="flex flex-col gap-12 items-center justify-center mt-16 md:mt-0">

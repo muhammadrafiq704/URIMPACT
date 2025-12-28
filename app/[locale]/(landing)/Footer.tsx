@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Container from "./components/Container";
 import React, { useState } from "react";
 import { useGSAP, gsap, SplitText } from "@/app/lib/gsap";
 
@@ -57,9 +56,8 @@ const Footer = () => {
     }, { scope: container });
     return (
         <>
-
             <footer ref={container} className="bg-[#2B3D4F] text-white">
-                <Container>
+                <div className="max-w-360 w-full mx-auto px-6 py-4 md:py-10 md:px-30">
                     <div className=" grid grid-cols-1 md:grid-cols-4 gap-12 items-center justify-center">
 
                         <div className="col-span-1 md:col-span-2 flex flex-col gap-6 items-start">
@@ -76,7 +74,7 @@ const Footer = () => {
                                 <span className="split font-medium text-sm leading-5">
                                     {t("newsletter_title")}
                                 </span>
-                                <div className="flex flex-col md:flex-row items-center gap-2 w-full">
+                                <div className="flex flex-col md:flex-row items-center gap-2 max-w-sm">
                                     <input
                                         type="email"
                                         placeholder={t("email_placeholder")}
@@ -99,7 +97,7 @@ const Footer = () => {
                         </div>
 
                         {/* COMPANY */}
-                        <div className="col-span-1 md:col-span-2 flex justify-end gap-20">
+                        <div className="col-span-1 md:col-span-2 flex justify-start md:justify-end gap-20">
                             {/* LEGAL */}
                             <div className="split flex flex-col gap-4">
                                 <span className="font-semibold text-sm leading-5">{t("legal_title")}</span>
@@ -133,25 +131,25 @@ const Footer = () => {
 
                     <hr className="border-t border-white/20 my-8" />
                     <div className="flex items-center justify-between">
-                        <p className="split text-center text-sm leading-5 text-white/50">
+                        <p className="split text-center text-[10px] md:text-sm leading-5 text-white/50">
                             {t("copyright")}
                         </p>
                         <div className="flex items-center gap-2">
                             {
                                 socialIcons.map((social) => (
-                                <Image
-                                    key={social.id}
-                                    src={social.icon}
-                                    alt={social.label}
-                                    width={18}
-                                    height={18}
-                                    className="cursor-pointer"
-                                />
+                                    <Image
+                                        key={social.id}
+                                        src={social.icon}
+                                        alt={social.label}
+                                        width={18}
+                                        height={18}
+                                        className="cursor-pointer"
+                                    />
                                 ))
                             }
                         </div>
                     </div>
-                </Container>
+                </div>
             </footer>
             {
                 openModal && (

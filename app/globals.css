@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #22262A;
@@ -16,16 +17,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* tailwind animation */
-@layer utilities {
-  .animate-scale-up {
-    animation: scaleUp .3s ease forwards;
-  }
-  @keyframes scaleUp {
-    from { transform: scale(.8); opacity:0 }
-    to { transform: scale(1); opacity:1 }
-  }
-}
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -36,10 +27,12 @@
 } */
 
 body {
-  background: var(--background);
+  /* background: var(--background); */
+  background: "#000000";
   color: var(--foreground);
   font-family: var(--font-inter);
-  scroll-behavior: smooth;
+  /* border: 1px solid red; */
+  overflow-x: hidden;
 }
 
 /* MARQUE ANIMATION EFFECT  */

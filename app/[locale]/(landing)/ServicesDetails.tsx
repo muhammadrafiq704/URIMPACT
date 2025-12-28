@@ -68,17 +68,17 @@ const ServicesDetails = () => {
     }, { scope: container });
 
     return (
-        <section ref={container}>
+        <section ref={container} className="overflow-x-hidden">
             {services.map((service, i) => {
                 const isEven = i % 2 === 0;
 
                 return (
                     <Container key={i}>
-                        <div className={`service-item flex gap-12 items-center
-              ${isEven ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse"}`}>
+                        <div className={`service-item flex gap-12 items-center 
+              ${isEven ? "flex-col md:flex-row" : "flex-col md:flex-row-reverse"} overflow-hidden w-full`}>
 
                             {/* LEFT */}
-                            <div className="w-full md:w-6/12">
+                            <div className="w-full md:w-6/12 max-w-full overflow-hidden">
                                 <Chip color={service.bg} className="mb-5">{service.tag}</Chip>
 
                                 <p className="split text-[clamp(24px,4vw,40px)] font-bold mb-3">
@@ -91,22 +91,22 @@ const ServicesDetails = () => {
                                 </p>
 
                                 <div className="grid md:grid-cols-2 gap-3">
-                                    {service.features.map((f, fi) => (
-                                        <div key={fi} className="flex gap-3">
+                                    {service.features.map((feature, i) => (
+                                        <div key={i} className="flex gap-3">
                                             <Image
                                                 src="/icons/tick-outline-icon.svg"
                                                 alt="tick"
                                                 width={12}
                                                 height={12}
                                             />
-                                            <p className="split text-sm">{f}</p>
+                                            <p className="split text-sm">{feature}</p>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
                             {/* RIGHT */}
-                            <div className="right-content">
+                            <div className="right-content w-full md:w-6/12 max-w-full overflow-hidden">
                                 {rightContent[i]}
                             </div>
                         </div>
