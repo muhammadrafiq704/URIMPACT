@@ -9,11 +9,11 @@ import { useSplitText } from "@/app/hooks/useSplitText";
 
 const tabs = [
     { id: 1, icon: "/icons/onboarding.svg", label: "Onboarding-icon", image: "/images/onboarding.png" },
-    { id: 2, icon: "/icons/dashboard.svg", label: "Dashboard-icon", sub_tab: ["Dashboard 1", "Dashboard 2"], image: ["/images/dashboard1.png", "/images/dashboard2.png"] },
+    { id: 2, icon: "/icons/dashboard.svg", label: "Dashboard-icon", sub_tab: ["Dashboard 1", "Dashboard 2"], image: ["/images/dashboard-1.png", "/images/dashboard-2.png"] },
     { id: 3, icon: "/icons/scope.svg", label: "Scope 1&2-icon", image: "/images/scope.png" },
     { id: 4, icon: "/icons/ai.svg", label: "Urimpact AI-icon", image: "/images/urimpact-ai.png" },
-    { id: 5, icon: "/icons/ai.svg", label: "Suppliers-icon", image: "/images/suppliers.png" },
-    { id: 6, icon: "/icons/ai.svg", label: "Certificate-icon", image: "/images/onboarding.png" },
+    { id: 5, icon: "/icons/suppliers.svg", label: "Suppliers-icon", image: "/images/suppliers.png" },
+    { id: 6, icon: "/icons/certificate.svg", label: "Certificate-icon", image: "/images/certificate.png" },
 ];
 
 const TabSection = () => {
@@ -62,7 +62,7 @@ const TabSection = () => {
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`split flex items-center justify-center gap-2 py-2 rounded-md transition-colors duration-300 ${activeTab === tab.id
+                            className={`split flex items-center justify-center gap-2 py-2 rounded-md transition-colors duration-300 cursor-pointer ${activeTab === tab.id
                                 ? "text-primary"
                                 : ""
                                 }`}
