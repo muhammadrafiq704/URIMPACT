@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, Varela_Round } from "next/font/google";
+import { Inter } from "next/font/google";
 import "../globals.css";
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { getMessages, setRequestLocale } from "next-intl/server";
 import GlobalFixedImage from "./(landing)/components/GlobalFixedImage";
+import localFont from "next/font/local";
+
+const ffShamel = localFont({
+  src: "../../public/fonts/FFShamelOneBook.woff2",
+  weight: "400",
+  style: "normal",
+  variable: "--font-ffShamel",
+});
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
-// Varela Round for Arabic
-const varelaRound = Varela_Round({
-  variable: "--font-varelaRound",
-  subsets: ["latin"],
-  weight: "400"
-});
-
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -54,7 +55,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <body
-        className={locale === 'ar' ? varelaRound.variable : inter.variable}
+        className={locale === 'ar' ? ffShamel.variable : inter.variable}
       >
         <GlobalFixedImage />
         <NextIntlClientProvider locale={locale} messages={messages}>

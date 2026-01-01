@@ -7,7 +7,7 @@
   --primary: #00B8A9;
   --secondary: #2C3E50;
     --font-inter: 'Inter', sans-serif;
-  --font-varelaRound: 'Varela Round', sans-serif;
+  --font-ffShamel: 'FF Shamel One Book', sans-serif;
 }
 
 @theme inline {
@@ -38,7 +38,7 @@ body {
 }
 
 html[lang="ar"] body {
-  font-family: var(--font-varelaRound), 'Cairo', sans-serif;
+  font-family: var(--font-ffShamel), 'Cairo', sans-serif;
 }
 
 /* MARQUE ANIMATION EFFECT  */

@@ -1,15 +1,19 @@
+"use client"
 import Image from "next/image"
+import { useParams } from "next/navigation"
 
 const GlobalFixedImage = () => {
+  const params = useParams();
+
   return (
-    <div className="fixed top-0 right-0 -z-10 pointer-events-none select-none max-w-full overflow-hidden">
+    <div className={`absolute ${params.locale === 'ar' ? 'left-0 scale-x-[-1]' : 'right-0'} -top-60 -z-10 pointer-events-none select-none max-w-full overflow-hidden`}>
       <Image
         src="/images/background-overlay-image.png"
         alt="Background Overlay"
         width={600}
         height={600}
         priority={true}
-        className="max-w-[90vw] md:max-w-none"
+        className="w-[70vw] md:max-w-none"
       />
     </div>
   )
