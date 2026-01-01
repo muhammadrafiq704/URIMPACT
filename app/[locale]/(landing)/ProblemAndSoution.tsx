@@ -41,9 +41,9 @@ const ProblemAndSoution = () => {
                         <h3 className="split font-bold text-[clamp(16px,4vw,30px)] leading-7 text-[#2B3D4F]">
                             {t("problem_title")}
                         </h3>
-                        <p className="split font-normal text-[16px] leading-6 text-[#657586]">
+                        {/* <p className="split font-normal text-[16px] leading-6 text-[#657586]">
                             {t("problem_description")}
-                        </p>
+                        </p> */}
 
                         <ul className="flex flex-col gap-4 list-none">
                             {manualProcessFeatures.map((feature, i) => (
