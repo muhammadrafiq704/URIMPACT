@@ -35,7 +35,7 @@ const Navbar = () => {
                             alt="logo-image"
                             width={200}
                             height={40}
-                            className="object-contain cursor-pointer w-35 md:w-50 md:h-10 "
+                            className="object-contain cursor-pointer w-35 md:w-50 md:h-16 "
                             onClick={() => scrollToSection("hero-section")}
                         />
                         <div className="flex items-center justify-center gap-4 md:gap-8">
