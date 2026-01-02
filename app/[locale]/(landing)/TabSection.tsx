@@ -10,7 +10,7 @@ import { useSplitText } from "@/app/hooks/useSplitText";
 const tabs = [
     { id: 1, icon: "/icons/onboarding.svg", label: "Onboarding-icon", image: "/images/onboarding.png" },
     { id: 2, icon: "/icons/dashboard.svg", label: "Dashboard-icon", sub_tab: ["Dashboard 1", "Dashboard 2"], image: ["/images/dashboard-1.png", "/images/dashboard-2.png"] },
-    { id: 3, icon: "/icons/scope.svg", label: "Scope 1&2-icon", image: "/images/scope.png" },
+    { id: 3, icon: "/icons/scope.svg", label: "Scope 1&2-icon", image: "/images/scope1,2,3.png" },
     { id: 4, icon: "/icons/ai.svg", label: "Urimpact AI-icon", image: "/images/urimpact-ai.png" },
     { id: 5, icon: "/icons/suppliers.svg", label: "Suppliers-icon", image: "/images/suppliers.png" },
     { id: 6, icon: "/icons/certificate.svg", label: "Certificate-icon", image: "/images/certificate.png" },
@@ -92,7 +92,8 @@ const TabSection = () => {
                 >
                     {activeImage && (
                         <Image
-                            src={activeImage}
+                            src={activeImage }
+                            blurDataURL="/images/placeholder-image.jpg"
                             alt="Tab Image"
                             width={800}
                             height={400}
