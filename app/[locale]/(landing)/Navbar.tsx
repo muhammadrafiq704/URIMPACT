@@ -31,7 +31,7 @@ const Navbar = () => {
                 <div className="max-w-7xl mx-auto w-full px-4 md:px-0">
                     <div className="flex items-center justify-between">
                         <Image
-                            src="/images/URIMPACT_LOGO_DARK.png"
+                            src="/URIMPACT_LOGO.png"
                             alt="logo-image"
                             width={200}
                             height={40}

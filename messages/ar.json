@@ -6,7 +6,6 @@
   "Navbar": [
     { "label": "تواصل معنا", "id": "contact-us" },
     { "label": "الخدمات", "id": "services" },
-    { "label": "المشاكل والحلول", "id": "problems-and-solutions" },
     { "label": "رؤية الغابات", "id": "see-forest" }
   ],
   "HeroSection": {
@@ -133,7 +132,7 @@
     ]
   },
   "TabSection": {
-    "title": "اكتشف المنصات",
+    "title": "اكتشف المنصة",
     "tabs": [
       "البدء",
       "لوحة التحكم",

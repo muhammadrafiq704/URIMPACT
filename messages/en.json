@@ -6,7 +6,6 @@
   "Navbar": [
     { "label": "Contact Us", "id": "contact-us" },
     { "label": "Services", "id": "services" },
-    { "label": "Problem & Solutions", "id": "problems-and-solutions" },
     { "label": "See Forest", "id": "see-forest" }
   ],
   "HeroSection": {
@@ -137,7 +136,7 @@
     ]
   },
   "TabSection": {
-    "title": "Discover the Platforms",
+    "title": "Discover the Platform",
     "tabs": [
       "Onboarding",
       "Dashboard",

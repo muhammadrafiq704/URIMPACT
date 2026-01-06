@@ -62,7 +62,7 @@ const Footer = () => {
 
                         <div className="col-span-1 md:col-span-2 flex flex-col gap-6 items-start">
                             <Image
-                                src="/images/URIMPACT_LOGO-08.svg"
+                                src="/images/URIMPACT_LOGO-WHITE.svg"
                                 alt={t("logo_alt")}
                                 width={200}
                                 height={50}
