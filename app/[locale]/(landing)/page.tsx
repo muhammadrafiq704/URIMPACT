@@ -24,8 +24,8 @@ const Landing = () => {
             <Trusted />
             <TabSection />
             <Services />
-            <ProblemAndSoution />
             <ServicesDetails />
+            <ProblemAndSoution />
             <CTA />
             <Footer />
         </div>
